@@ -1,0 +1,13 @@
+{
+    "name": "yasha/yasha-base-backend",
+    "description": "A backend package stack to speedup development based on yasha base. Stack includes Laravel Backpack and other convenient libraries",
+    "authors": [
+        {
+            "name": "Jaume MK",
+            "email": "jaumemk@gmail.com"
+        }
+    ],
+    "require": {
+        "backpack/crud": "^3.6"
+    }
+}
