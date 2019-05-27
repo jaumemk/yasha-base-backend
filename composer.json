@@ -8,6 +8,25 @@
         }
     ],
     "require": {
-        "backpack/crud": "^3.6"
+        "backpack/crud": "^3.6",
+        "mcamara/laravel-localization": "^1.3",
+        "imliam/laravel-env-set-command": "^1.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Yasha\\Backend\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": [
+            ],
+            "providers": [
+                "Yasha\\Backend\\BackendServiceProvider"
+            ],
+            "aliases": {
+                "Lalo": "Mcamara\\LaravelLocalization\\Facades\\LaravelLocalization"
+            }
+        }
     }
 }
