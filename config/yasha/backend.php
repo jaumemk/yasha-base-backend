@@ -7,5 +7,5 @@ return [
     'developer_name' => 'Yasha',
     'developer_link' => 'https://#',
     'show_powered_by' => false,
-    'skin' => 'skin-green-light'
+    'skin' => 'skin-blue-light'
 ];

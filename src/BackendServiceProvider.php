@@ -15,9 +15,18 @@ class BackendServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        $this->loadRoutesFrom(__DIR__.'/../routes/backend.php');
 
-        $config = include(__DIR__.'/../config/yasha/backend.php');
+        $customViewsFolder = resource_path('views/vendor/yasha/');
+
+        if (file_exists(resource_path('views/vendor/yasha/backend'))) {
+            $this->loadViewsFrom($customViewsFolder, 'yasha/backend');
+        }
+
+        $this->loadViewsFrom(dirname(__DIR__) . '/resources/views', 'yasha/backend');
+
+        $this->loadRoutesFrom(dirname(__DIR__) . '/routes/backend.php');
+
+        $config = include(dirname(__DIR__) . '/config/yasha/backend.php');
 
         $array = collect(config('backpack.base'))
             ->merge($config)
@@ -25,6 +34,10 @@ class BackendServiceProvider extends ServiceProvider
             ->toArray();
 
         config(['backpack.base' => $array]);
+
+        $overlays = array_merge(config('backpack.base.overlays'), ['vendor/yasha/backend/yasha-custom.css']);
+
+        config(['backpack.base.overlays' => $overlays]);
 
     }
 
