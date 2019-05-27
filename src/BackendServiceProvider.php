@@ -9,6 +9,10 @@ use Route;
 class BackendServiceProvider extends ServiceProvider
 {
 
+    protected $commands = [
+        'Yasha\Backend\Console\Commands\CreateDatabaseCommand',
+    ];
+
     public function boot()
     {
         $this->loadRoutesFrom(__DIR__.'/../routes/backend.php');
@@ -26,7 +30,7 @@ class BackendServiceProvider extends ServiceProvider
 
     public function register()
     {
-        //
+        $this->commands($this->commands);
     }
 
 }
