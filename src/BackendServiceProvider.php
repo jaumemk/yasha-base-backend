@@ -11,6 +11,8 @@ class BackendServiceProvider extends ServiceProvider
 
     protected $commands = [
         'Yasha\Backend\Console\Commands\CreateDatabaseCommand',
+        'Yasha\Backend\Console\Commands\AuthIsAdminCommand',
+
     ];
 
     public function boot()
