@@ -26,19 +26,6 @@ class BackendServiceProvider extends ServiceProvider
 
         $this->loadRoutesFrom(dirname(__DIR__) . '/routes/backend.php');
 
-        $config = include(dirname(__DIR__) . '/config/yasha/backend.php');
-
-        $array = collect(config('backpack.base'))
-            ->merge($config)
-            ->merge(config('yasha.backend'))
-            ->toArray();
-
-        config(['backpack.base' => $array]);
-
-        $overlays = array_merge(config('backpack.base.overlays'), ['vendor/yasha/backend/yasha-custom.css']);
-
-        config(['backpack.base.overlays' => $overlays]);
-
     }
 
     public function register()
