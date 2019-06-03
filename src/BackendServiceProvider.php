@@ -24,9 +24,18 @@ class BackendServiceProvider extends ServiceProvider
             $this->loadViewsFrom($customViewsFolder, 'yasha/backend');
         }
 
+        $this->loadTranslationsFrom(dirname(__DIR__) . '/resources/lang', 'yasha/backend');
+
         $this->loadViewsFrom(dirname(__DIR__) . '/resources/views', 'yasha/backend');
+        
+        $this->loadViewsFrom(realpath(__DIR__.'/resources/views/vendor/backpack/crud'), 'pagemanager');
 
         $this->loadRoutesFrom(dirname(__DIR__) . '/routes/backend.php');
+
+        $this->loadRoutesFrom(dirname(__DIR__) . '/routes/pagemanager.php');
+
+        $this->loadMigrationsFrom(dirname(__DIR__) . '/database/migrations');
+
 
     }
 
