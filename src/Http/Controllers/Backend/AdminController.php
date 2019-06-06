@@ -1,6 +1,6 @@
 <?php
 
-namespace Yasha\Backend\Http\Controllers;
+namespace Yasha\Backend\Http\Controllers\Backend;
 
 use Backpack\Base\app\Http\Controllers\AdminController as BackpackAdminController;
 

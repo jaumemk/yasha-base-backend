@@ -11,6 +11,8 @@ class BackendServiceProvider extends ServiceProvider
 
     protected $commands = [
         'Yasha\Backend\Console\Commands\CreateDatabaseCommand',
+        'Yasha\Backend\Console\Commands\AuthIsAdminCommand',
+
     ];
 
     public function boot()
@@ -22,22 +24,18 @@ class BackendServiceProvider extends ServiceProvider
             $this->loadViewsFrom($customViewsFolder, 'yasha/backend');
         }
 
+        $this->loadTranslationsFrom(dirname(__DIR__) . '/resources/lang', 'yasha/backend');
+
         $this->loadViewsFrom(dirname(__DIR__) . '/resources/views', 'yasha/backend');
+        
+        $this->loadViewsFrom(realpath(__DIR__.'/resources/views/vendor/backpack/crud'), 'pagemanager');
 
         $this->loadRoutesFrom(dirname(__DIR__) . '/routes/backend.php');
 
-        $config = include(dirname(__DIR__) . '/config/yasha/backend.php');
+        $this->loadRoutesFrom(dirname(__DIR__) . '/routes/pagemanager.php');
 
-        $array = collect(config('backpack.base'))
-            ->merge($config)
-            ->merge(config('yasha.backend'))
-            ->toArray();
+        $this->loadMigrationsFrom(dirname(__DIR__) . '/database/migrations');
 
-        config(['backpack.base' => $array]);
-
-        $overlays = array_merge(config('backpack.base.overlays'), ['vendor/yasha/backend/yasha-custom.css']);
-
-        config(['backpack.base.overlays' => $overlays]);
 
     }
 
