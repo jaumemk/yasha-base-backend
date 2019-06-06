@@ -41,6 +41,11 @@ class MenuItem extends Model
         return $this->belongsTo('Yasha\Backend\Models\Page', 'page_id');
     }
 
+    public function getPageAttribute()
+    {
+        return $this->page()->firstOrFail();
+    }
+
     /**
      * Get all menu items, in a hierarchical collection.
      * Only supports 2 levels of indentation.
