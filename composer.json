@@ -12,7 +12,8 @@
         "mcamara/laravel-localization": "^1.3",
         "spatie/laravel-translatable": "^4.1",
         "imliam/laravel-env-set-command": "^1.0.0",
-        "cviebrock/eloquent-sluggable": "^4.0"
+        "cviebrock/eloquent-sluggable": "^4.0",
+        "eduardoarandah/backpacklogviewer": "1.0.5.1"
     },
     "autoload": {
         "psr-4": {

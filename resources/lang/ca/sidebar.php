@@ -4,6 +4,7 @@ return [
 
     'menu-item' => 'Item de menú',
     'page' => 'Pàgina',
-    'language' => 'Idioma'
+    'language' => 'Idioma',
+    'server' => 'Servidor',
 
 ];

@@ -23,6 +23,8 @@ Route::group(
             Route::get('dashboard', 'AdminController@dashboard')->name('backpack.dashboard');
         }
 
+        Route::get('server', 'AdminController@server')->name('backpack.server');
+
         CRUD::resource('menu-item', 'MenuItemController');
 
         Route::name('set-locale')->get('set-locale/{locale}', function($locale){
