@@ -102,7 +102,7 @@ class PageController extends CrudController
                                 'name' => 'template',
                                 'label' => __('yasha/backend::pagemanager.template'),
                                 'type' => 'select_page_template',
-                                'view_namespace'  => 'yasha/backend::fields',
+                                'view_namespace'  => 'yasha-backend::fields',
                                 'options' => $this->getTemplatesArray(),
                                 'value' => $template,
                                 'allows_null' => false,

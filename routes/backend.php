@@ -23,7 +23,11 @@ Route::group(
             Route::get('dashboard', 'AdminController@dashboard')->name('backpack.dashboard');
         }
 
+        Route::get('server', 'AdminController@server')->name('backpack.server');
+
         CRUD::resource('menu-item', 'MenuItemController');
+
+        CRUD::resource('lang-line', 'LanguageLineController');
 
         Route::name('set-locale')->get('set-locale/{locale}', function($locale){
             //storing the locale in session to get it back in the middleware
