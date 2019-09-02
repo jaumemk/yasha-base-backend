@@ -24,6 +24,8 @@ class BackendServiceProvider extends ServiceProvider
 
         $this->app['view']->prependNamespace('backpack', dirname(__DIR__) . '/resources/views/vendor/backpack/base');
 
+        $this->app['view']->prependNamespace('crud', dirname(__DIR__) . '/resources/views/vendor/backpack/crud');
+
         $this->app['view']->prependNamespace('elfinder', dirname(__DIR__) . '/resources/views/vendor/elfinder');
 
         $this->app['view']->prependNamespace('log-viewer', dirname(__DIR__) . '/resources/views/vendor/log-viewer');

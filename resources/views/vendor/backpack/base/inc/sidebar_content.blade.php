@@ -8,6 +8,8 @@
 
 <li><a href="{{ backpack_url('page') }}"><i class="fa fa-file"></i> <span>{{ __('yasha/backend::sidebar.page') }}</span></a></li>
 
+<li><a href="{{ backpack_url('lang-line') }}"><i class="fa  fa-exchange"></i> <span>{{ __('yasha/backend::sidebar.lang-line') }}</span></a></li>
+
 @includeIf('vendor/backpack/base/inc/sidebar_content')
 
 <li class="header">Advanced</li>

@@ -27,6 +27,8 @@ Route::group(
 
         CRUD::resource('menu-item', 'MenuItemController');
 
+        CRUD::resource('lang-line', 'LanguageLineController');
+
         Route::name('set-locale')->get('set-locale/{locale}', function($locale){
             //storing the locale in session to get it back in the middleware
             session()->put('locale', $locale);
