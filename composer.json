@@ -27,7 +27,6 @@
     "extra": {
         "laravel": {
             "dont-discover": [
-                "spatie/laravel-translation-loader"
             ],
             "providers": [
                 "Yasha\\Backend\\BackendServiceProvider"
