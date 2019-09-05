@@ -2,7 +2,7 @@
 
 namespace Yasha\Backend\Http\Controllers\Backend;
 
-use Yasha\Backend\Traits\PageTemplates;
+use \App\Traits\PageTemplates;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 // VALIDATION: change the requests to match your own file names if you need form validation
 use Illuminate\Http\Request as StoreRequest;
@@ -161,7 +161,7 @@ class PageController extends CrudController
     {
         $templates_array = [];
 
-        $templates_trait = new \ReflectionClass('Yasha\Backend\Traits\PageTemplates');
+        $templates_trait = new \ReflectionClass('\App\Traits\PageTemplates');
         $templates = $templates_trait->getMethods(\ReflectionMethod::IS_PRIVATE);
 
         if (! count($templates)) {
@@ -179,9 +179,14 @@ class PageController extends CrudController
     public function getTemplatesArray()
     {
         $templates = $this->getTemplates();
+        
+        $removeTemplates = ['seo_tools'];
 
         foreach ($templates as $template) {
-            $templates_array[$template->name] = str_replace('_', ' ', title_case($template->name));
+            if(!in_array($template->name, $removeTemplates))
+            {
+                $templates_array[$template->name] = str_replace('_', ' ', title_case($template->name));
+            }
         }
 
         return $templates_array;

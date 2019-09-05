@@ -6,6 +6,7 @@ return [
     'page' => 'Page',
     'language' => 'Language (English)',
     'server' => 'Server',
-    'lang-line' => 'Translation'
+    'lang-line' => 'Translation',
+    'settings' => 'Settings'
 
 ];
