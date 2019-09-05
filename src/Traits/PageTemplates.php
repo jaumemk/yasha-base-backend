@@ -4,7 +4,9 @@ namespace Yasha\Backend\Traits;
 
 trait PageTemplates
 {
-    /*
+    use SeoTools;
+
+/*
     |--------------------------------------------------------------------------
     | Page Templates for Backpack\PageManager
     |--------------------------------------------------------------------------
@@ -31,30 +33,14 @@ trait PageTemplates
             'tab' => 'Contents'
         ]);
 
-        $this->crud->addField([
-            'name' => 'meta_title',
-            'label' => __('yasha/backend::pagemanager.meta_title'),
-            'fake' => true,
-            'store_in' => 'extras',
-            'tab' => 'SEO Tools'
-        ]);
-
-        $this->crud->addField([
-            'name' => 'meta_description',
-            'label' => __('yasha/backend::pagemanager.meta_description'),
-            'fake' => true,
-            'store_in' => 'extras',
-            'tab' => 'SEO Tools'
-        ]);
-
-        $this->crud->addField([
-            'name' => 'meta_keywords',
-            'type' => 'textarea',
-            'label' => __('yasha/backend::pagemanager.meta_keywords'),
-            'fake' => true,
-            'store_in' => 'extras',
-            'tab' => 'SEO Tools'
-        ]);
+        $this->seo_tools();
 
     }
+
+
+    private function home_layout()
+    {
+        $this->seo_tools();
+    }
+
 }

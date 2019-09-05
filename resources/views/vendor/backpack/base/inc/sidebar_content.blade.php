@@ -10,6 +10,8 @@
 
 <li><a href="{{ backpack_url('lang-line') }}"><i class="fa  fa-exchange"></i> <span>{{ __('yasha/backend::sidebar.lang-line') }}</span></a></li>
 
+<li><a href='{{ url(config('backpack.base.route_prefix', 'admin') . '/setting') }}'><i class='fa fa-cog'></i> <span>{{ __('yasha/backend::sidebar.settings') }}</span></a></li>
+
 @includeIf('vendor/backpack/base/inc/sidebar_content')
 
 <li class="header">Advanced</li>

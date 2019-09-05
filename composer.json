@@ -9,6 +9,7 @@
     ],
     "require": {
         "backpack/crud": "^3.6",
+        "backpack/settings": "^2.1",
         "barryvdh/laravel-elfinder": "^0.4.2",
         "cviebrock/eloquent-sluggable": "^4.0",
         "eduardoarandah/backpacklogviewer": "1.0.5.1",
@@ -21,6 +22,7 @@
         "psr-4": {
             "Yasha\\Backend\\": "src"
         },
+        "files": ["src/helpers.php"],
         "classmap": [
             "database/migrations"
         ]

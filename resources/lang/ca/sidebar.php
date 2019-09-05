@@ -6,6 +6,8 @@ return [
     'page' => 'Pàgina',
     'language' => 'Idioma (Català)',
     'server' => 'Servidor',
-    'lang-line' => 'Traduccions'
+    'lang-line' => 'Traduccions',
+    'settings' => 'Configuració'
+
 
 ];
