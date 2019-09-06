@@ -21,3 +21,7 @@
 <li><a href="{{ backpack_url('server') }}"><i class="fa fa-server"></i> <span>{{ __('yasha/backend::sidebar.server') }}</span></a></li>
 
 <li><a href='{{route("log-viewer::logs.list")}}'><i class='fa fa-history'></i> <span>Logs</span></a></li>
+
+@if(env('local'))
+<li><a href='{{ url('__clockwork') }}' target="_blank"><i class='fa fa-fire'></i> <span>Clockwork</span></a></li>
+@endif
