@@ -19,33 +19,35 @@ class PageController extends Controller
 
     public function index()
     {
-        $page = Page::where('id', \Setting::get('homepage'))->first();
-
-        if (!$page)
+        if (!$page = Page::where('id', \Setting::get('homepage'))->first())
         {
+            // if homepage is not overriden load the default
             return view('pages.home_layout');
         }
 
-        $this->data['page'] = $page->withFakes();
-        $this->data['page_title'] = $page->title;
-        $this->data['page_content'] = $page->content;
-
-        return view('pages.'.$page->template, $this->data);
+        return $this->load_page($page);
     }
 
     public function backend($slug, $subs = null)
     {
-        $page = Page::where('slug->'. app()->getLocale() , $slug)->firstOrFail();
-
-        if (!$page)
+        if (!$page = Page::where('slug->'. app()->getLocale() , $slug)->firstOrFail())
         {
+            // if no slug has been found show erro page
             abort(404, 'Please go back to our <a href="'.url('').'">homepage</a>.');
         }
 
-        $this->data['page'] = $page->withFakes();
-        $this->data['page_title'] = $page->title;
-        $this->data['page_content'] = $page->content;
+        return $this->load_page($page);
+    }
 
+    private function load_page($page)
+    {
+
+        $this->data['page'] = $page->withFakes();
+        
+        $this->data['meta']['title'] = $page->meta_title; 
+        $this->data['meta']['description'] = $page->meta_description; 
+        $this->data['meta']['keywords'] = $page->meta_keywords; 
+ 
         return view('pages.'.$page->template, $this->data);
     }
 }

@@ -26,20 +26,29 @@ class Page extends Model
         'title', // t
         'slug', // t
         'content', // t
-        'extras' // t
+        'extras',
+        'extras_translatable' // t
     ];
 
     protected $translatable = [
         'title',
         'slug',
         'content',
-        'extras'
+        'extras_translatable'
     ];
     
 
     protected $fakeColumns = [
-        'extras'
+        'extras',
+        'extras_translatable'
     ];
+
+    // Backpack documented this way, but not working when casted.
+    // therefore is commented.
+    
+    // protected $casts = [
+    //     'extras_translatable' => 'array'
+    // ];
 
     /**
      * Return the sluggable configuration array for this model.
