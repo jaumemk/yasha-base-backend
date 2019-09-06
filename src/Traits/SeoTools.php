@@ -10,7 +10,7 @@ trait SeoTools
             'name' => 'meta_title',
             'label' => __('yasha/backend::pagemanager.meta_title'),
             'fake' => true,
-            'store_in' => 'extras',
+            'store_in' => 'extras_translatable',
             'tab' => 'SEO Tools'
         ]);
 
@@ -18,7 +18,7 @@ trait SeoTools
             'name' => 'meta_description',
             'label' => __('yasha/backend::pagemanager.meta_description'),
             'fake' => true,
-            'store_in' => 'extras',
+            'store_in' => 'extras_translatable',
             'tab' => 'SEO Tools'
         ]);
 
@@ -27,7 +27,7 @@ trait SeoTools
             'type' => 'textarea',
             'label' => __('yasha/backend::pagemanager.meta_keywords'),
             'fake' => true,
-            'store_in' => 'extras',
+            'store_in' => 'extras_translatable',
             'tab' => 'SEO Tools'
         ]);
 
