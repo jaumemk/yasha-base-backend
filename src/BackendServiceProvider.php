@@ -22,6 +22,8 @@ class BackendServiceProvider extends ServiceProvider
 
         $_SERVER['YASHABASE_BACKEND_VERSION'] = $this::VERSION;
 
+        define("YASHA", __DIR__);
+
         $this->app['view']->prependNamespace('backpack', dirname(__DIR__) . '/resources/views/vendor/backpack/base');
 
         $this->app['view']->prependNamespace('crud', dirname(__DIR__) . '/resources/views/vendor/backpack/crud');

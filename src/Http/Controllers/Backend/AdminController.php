@@ -35,6 +35,10 @@ class AdminController extends BackpackAdminController
 
 
         $this->data['content'] = "
+        <div>
+            From runing from: " . YASHA . "
+        </div>
+        <hr>
         <div> Backend " . $_SERVER['YASHABASE_BACKEND_VERSION'] . "</div>
         <hr>
         <div> Backpack Crud " . $_SERVER['BACKPACK_CRUD_VERSION'] ."</div>
