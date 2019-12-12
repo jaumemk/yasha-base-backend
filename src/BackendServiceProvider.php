@@ -40,6 +40,8 @@ class BackendServiceProvider extends ServiceProvider
 
         $this->loadRoutesFrom(dirname(__DIR__) . '/routes/backend.php');
 
+        $this->loadRoutesFrom(dirname(__DIR__) . '/routes/settings.php');
+
         $this->loadRoutesFrom(dirname(__DIR__) . '/routes/pagemanager.php');
 
         $this->loadMigrationsFrom(dirname(__DIR__) . '/database/migrations');
