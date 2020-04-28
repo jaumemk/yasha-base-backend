@@ -19,7 +19,7 @@ class MenuItemController extends CrudController
         $this->crud->setEntityNameStrings(__('yasha/backend::basic.menu-item'), __('yasha/backend::basic.menu-items'));
 
         $this->crud->allowAccess('reorder');
-        $this->crud->enableReorder('name', 2);
+        $this->crud->enableReorder('name', 0);
 
         $this->crud->addColumn([
                                 'name' => 'name',
