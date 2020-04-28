@@ -40,7 +40,7 @@ class MenuItemController extends CrudController
                             ]);
         $this->crud->addField([
                                 'label' => 'Parent',
-                                'type' => 'select',
+                                'type' => 'select2_nested',
                                 'name' => 'parent_id',
                                 'entity' => 'parent',
                                 'attribute' => 'name',
