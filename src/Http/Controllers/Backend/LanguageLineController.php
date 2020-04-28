@@ -59,6 +59,11 @@ class LanguageLineController extends CrudController
         //                     ]);
     }
 
+    public function setup()
+    {
+        $this->crud->orderBy('updated_at', 'desc');
+    }
+
     public function store(StoreRequest $request)
     {
 
