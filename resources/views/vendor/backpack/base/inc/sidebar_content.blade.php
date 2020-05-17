@@ -22,6 +22,6 @@
 
 <li><a href='{{route("log-viewer::logs.list")}}'><i class='fa fa-history'></i> <span>Logs</span></a></li>
 
-@if(env('local'))
+@if(env('APP_ENV') == 'local')
 <li><a href='{{ url('__clockwork') }}' target="_blank"><i class='fa fa-fire'></i> <span>Clockwork</span></a></li>
 @endif
