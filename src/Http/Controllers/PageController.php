@@ -30,9 +30,12 @@ class PageController extends Controller
 
     public function backend($slug, $subs = null)
     {
+        $slug = (!is_null($subs)) ? $slug .'/'. $subs : $slug;
+
         if (!$page = Page::where('slug->'. app()->getLocale() , $slug)->firstOrFail())
         {
-            // if no slug has been found show erro page
+            // if no slug has been found show error page
+
             abort(404, 'Please go back to our <a href="'.url('').'">homepage</a>.');
         }
 
